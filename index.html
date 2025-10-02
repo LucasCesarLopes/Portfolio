@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Lucas César Lopes - Analista de Dados</title>
+    
     <meta name="description" content="Portfólio de Lucas César Lopes, Analista de Dados Júnior. Veja projetos, habilidades e experiência profissional.">
     <meta property="og:title" content="Portfólio | Lucas César Lopes - Analista de Dados">
     <meta property="og:description" content="Portfólio de Lucas César Lopes, Analista de Dados Júnior. Veja projetos, habilidades e experiência profissional.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/your-github-id"> <!-- Substitua pelo link real da imagem -->
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/your-github-id"> <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    
     <style>
         .sidebar-menu-button.active {
-            
             background-image: linear-gradient(to right, var(--tw-gradient-stops));
             --tw-gradient-from: #3b82f6;
             --tw-gradient-to: #334155;
@@ -36,21 +46,32 @@
         }
     </style>
 </head>
-<body class="bg-slate-50">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400">
+
+    <header class="lg:hidden sticky top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-16">
+            <h1 class="font-bold text-lg text-slate-800 dark:text-slate-200">Lucas C. Lopes</h1>
+            <button id="mobile-menu-button" class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Abrir menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
 
     <div class="min-h-screen flex w-full">
-        <aside class="w-72 hidden lg:flex flex-col border-r border-slate-200/60 bg-white/90 p-6 space-y-6 sticky top-0 h-screen">
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+        <aside id="sidebar" class="w-72 fixed lg:sticky top-0 h-screen flex-col border-r border-slate-200/60 dark:border-slate-700 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-6 space-y-6 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-50">
             <div class="text-center">
                 <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-slate-800 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
                     <i data-lucide="user" class="w-10 h-10 text-white"></i>
                 </div>
-                <h2 class="font-bold text-xl text-slate-800 mb-1">Lucas César Lopes</h2>
-                <p class="text-sm text-slate-600 font-medium mb-3">Analista de Dados</p>
+                <h2 class="font-bold text-xl text-slate-800 dark:text-slate-200 mb-1">Lucas César Lopes</h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400 font-medium mb-3">Analista de Dados</p>
                 <div class="flex justify-center gap-2">
-                    <a href="https://github.com/LucasCesarLopes" target="_blank" rel="noopener" aria-label="GitHub" class="w-8 h-8 bg-slate-100 hover:bg-slate-800 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300">
+                    <a href="https://github.com/LucasCesarLopes" target="_blank" rel="noopener" aria-label="GitHub" class="w-8 h-8 bg-slate-100 dark:bg-slate-700 hover:bg-slate-800 hover:text-white dark:hover:bg-slate-600 rounded-lg flex items-center justify-center transition-all duration-300">
                         <i data-lucide="github" class="w-4 h-4"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/lucas-cesar-lopes" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-8 h-8 bg-slate-100 hover:bg-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-all duration-300">
+                    <a href="https://www.linkedin.com/in/lucas-cesar-lopes" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-8 h-8 bg-slate-100 dark:bg-slate-700 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300">
                         <i data-lucide="linkedin" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -58,38 +79,14 @@
 
             <nav class="flex-1">
                 <ul class="space-y-2" id="sidebar-nav">
-                    <li>
-                        <a href="#home" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 transition-colors duration-300 text-slate-700 font-medium">
-                            <i data-lucide="user" class="w-5 h-5"></i>
-                            <span>Sobre</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#skills" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 transition-colors duration-300 text-slate-700 font-medium">
-                            <i data-lucide="award" class="w-5 h-5"></i>
-                            <span>Habilidades</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#projects" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 transition-colors duration-300 text-slate-700 font-medium">
-                            <i data-lucide="folder-open" class="w-5 h-5"></i>
-                            <span>Projetos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#experience" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 transition-colors duration-300 text-slate-700 font-medium">
-                            <i data-lucide="briefcase" class="w-5 h-5"></i>
-                            <span>Experiência</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 transition-colors duration-300 text-slate-700 font-medium">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            <span>Contato</span>
-                        </a>
-                    </li>
+                    <li><a href="#home" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300 text-slate-700 dark:text-slate-300 font-medium"> <i data-lucide="user" class="w-5 h-5"></i> <span>Sobre</span></a></li>
+                    <li><a href="#skills" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300 text-slate-700 dark:text-slate-300 font-medium"> <i data-lucide="award" class="w-5 h-5"></i> <span>Habilidades</span></a></li>
+                    <li><a href="#projects" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300 text-slate-700 dark:text-slate-300 font-medium"> <i data-lucide="folder-open" class="w-5 h-5"></i> <span>Projetos</span></a></li>
+                    <li><a href="#experience" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300 text-slate-700 dark:text-slate-300 font-medium"> <i data-lucide="briefcase" class="w-5 h-5"></i> <span>Experiência</span></a></li>
+                    <li><a href="#contact" class="sidebar-menu-button flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-300 text-slate-700 dark:text-slate-300 font-medium"> <i data-lucide="mail" class="w-5 h-5"></i> <span>Contato</span></a></li>
                 </ul>
             </nav>
+
         </aside>
 
         <main class="flex-1 overflow-auto p-4 sm:p-8">
@@ -98,46 +95,42 @@
                 <section id="home" class="min-h-screen flex items-center" data-aos>
                     <div>
                         <div class="text-center mb-16">
-
-                            
-                            <h1 class="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                            <h1 class="text-5xl md:text-6xl font-bold text-slate-800 dark:text-slate-200 mb-6 leading-tight">
                                 Transformo <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-700">Dados</span> em
                                 <br />Decisões Estratégicas
                             </h1>
-                            
-                            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+                            <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
                                 Analista de Dados apaixonado por descobrir padrões e gerar insights que impulsionam o crescimento dos negócios.
                             </p>
                         </div>
                         
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
-                                <span class="inline-block mb-4 bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Sobre Mim</span>
-                                    <h2 class="text-3xl font-bold text-slate-800 mb-6">Olá! Eu sou Lucas César</h2>
-                                    <div class="space-y-4 text-slate-600 leading-relaxed">
+                                <span class="inline-block mb-4 bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Sobre Mim</span>
+                                <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-200 mb-6">Olá! Eu sou Lucas César</h2>
+                                <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
                                     <p>Sou Analista de Dados com 2 anos de experiência ajudando empresas a transformar dados em decisões inteligentes. Estou cursando Ciência de Dados e atuo no dia a dia construindo análises, modelos e dashboards que geram impacto real no negócio.</p>
                                     <p>Tenho foco em entender os desafios de cada área, traduzir números em histórias claras e entregar soluções que realmente resolvem problemas. Minhas principais ferramentas são Python, SQL, Power BI e Excel avançado.</p>
-                            </div>
-
+                                </div>
                                 <div class="mt-8 space-y-3">
-                                    <div class="flex items-center gap-3 text-slate-600"><i data-lucide="map-pin" class="w-5 h-5 text-blue-600"></i><span>Campinas / SP, Brasil</span></div>
-                                    <div class="flex items-center gap-3 text-slate-600"><i data-lucide="mail" class="w-5 h-5 text-blue-600"></i><span>lucascesar3445@gmail.com</span></div>
+                                    <div class="flex items-center gap-3 text-slate-600 dark:text-slate-400"><i data-lucide="map-pin" class="w-5 h-5 text-blue-600"></i><span>Campinas / SP, Brasil</span></div>
+                                    <div class="flex items-center gap-3 text-slate-600 dark:text-slate-400"><i data-lucide="mail" class="w-5 h-5 text-blue-600"></i><span>lucascesar3445@gmail.com</span></div>
                                 </div>
                             </div>
-                            <div class="bg-white/70 backdrop-blur-sm border-0 shadow-xl rounded-2xl p-8">
-                                <h3 class="text-xl font-bold text-slate-800 mb-6">Principais Competências</h3>
+                            <div class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-xl rounded-2xl p-8">
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-6">Principais Competências</h3>
                                 <div class="space-y-4">
                                     <div class="skill-bar" data-level="70">
-                                        <div class="flex justify-between mb-1"><span class="font-medium text-slate-700">SQL</span><span class="text-slate-600">100%</span></div>
-                                        <div class="h-2 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-slate-600 rounded-full skill-bar-inner"></div></div>
+                                        <div class="flex justify-between mb-1"><span class="font-medium text-slate-700 dark:text-slate-300">SQL</span><span class="text-slate-600 dark:text-slate-400">70%</span></div>
+                                        <div class="h-2 bg-slate-200 dark:bg-slate-700 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-slate-600 rounded-full skill-bar-inner"></div></div>
                                     </div>
                                     <div class="skill-bar" data-level="70">
-                                        <div class="flex justify-between mb-1"><span class="font-medium text-slate-700">Python</span><span class="text-slate-600">70%</span></div>
-                                        <div class="h-2 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-slate-600 rounded-full skill-bar-inner"></div></div>
+                                        <div class="flex justify-between mb-1"><span class="font-medium text-slate-700 dark:text-slate-300">Python</span><span class="text-slate-600 dark:text-slate-400">70%</span></div>
+                                        <div class="h-2 bg-slate-200 dark:bg-slate-700 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-slate-600 rounded-full skill-bar-inner"></div></div>
                                     </div>
                                     <div class="skill-bar" data-level="100">
-                                        <div class="flex justify-between mb-1"><span class="font-medium text-slate-700">Power BI</span><span class="text-slate-600">100%</span></div>
-                                        <div class="h-2 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-slate-600 rounded-full skill-bar-inner"></div></div>
+                                        <div class="flex justify-between mb-1"><span class="font-medium text-slate-700 dark:text-slate-300">Power BI</span><span class="text-slate-600 dark:text-slate-400">100%</span></div>
+                                        <div class="h-2 bg-slate-200 dark:bg-slate-700 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-slate-600 rounded-full skill-bar-inner"></div></div>
                                     </div>
                                 </div>
                             </div>
@@ -147,147 +140,123 @@
 
                 <section id="skills" class="space-y-8" data-aos>
                     <div class="text-center">
-                         <span class="inline-block mb-4 bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Competências</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-slate-800">Minhas <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-700">Habilidades</span></h1>
+                        <span class="inline-block mb-4 bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Competências</span>
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-200">Minhas <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-700">Habilidades</span></h1>
                     </div>
                     
-                    <div class="bg-white/70 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-8">
-                        <h3 class="flex items-center gap-3 text-2xl font-bold text-slate-800 mb-6"><div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center"><i data-lucide="code" class="w-6 h-6 text-white"></i></div>Programação</h3>
+                    <div class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-lg rounded-2xl p-8">
+                        <h3 class="flex items-center gap-3 text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6"><div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center"><i data-lucide="code" class="w-6 h-6 text-white"></i></div>Programação</h3>
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="bg-slate-50 p-4 rounded-xl"> <h4 class="font-semibold text-lg">Python</h4> <p class="text-sm text-slate-600">Automação de Processos. Análise de dados com Pandas e NumPy.</p> </div>
-                            <div class="bg-slate-50 p-4 rounded-xl"> <h4 class="font-semibold text-lg">SQL</h4> <p class="text-sm text-slate-600">Consultas complexas, joins e stored procedures.</p> </div>
-                            <div class="bg-slate-50 p-4 rounded-xl"> <h4 class="font-semibold text-lg">DAX</h4> <p class="text-sm text-slate-600">Criação de medidas, cálculos e análises avançadas.</p> </div>
+                            <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-xl"> <h4 class="font-semibold text-lg text-slate-800 dark:text-slate-200">Python</h4> <p class="text-sm text-slate-600 dark:text-slate-400">Automação de Processos. Análise de dados com Pandas e NumPy.</p> </div>
+                            <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-xl"> <h4 class="font-semibold text-lg text-slate-800 dark:text-slate-200">SQL</h4> <p class="text-sm text-slate-600 dark:text-slate-400">Consultas complexas, joins e stored procedures.</p> </div>
+                            <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-xl"> <h4 class="font-semibold text-lg text-slate-800 dark:text-slate-200">DAX</h4> <p class="text-sm text-slate-600 dark:text-slate-400">Criação de medidas, cálculos e análises avançadas.</p> </div>
                         </div>
                     </div>
 
-                    <div class="bg-white/70 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-8">
-                         <h3 class="flex items-center gap-3 text-2xl font-bold text-slate-800 mb-6"><div class="w-10 h-10 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center"><i data-lucide="database" class="w-6 h-6 text-white"></i></div>Bancos de Dados</h3>
+                    <div class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-lg rounded-2xl p-8">
+                        <h3 class="flex items-center gap-3 text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6"><div class="w-10 h-10 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center"><i data-lucide="database" class="w-6 h-6 text-white"></i></div>Bancos de Dados</h3>
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="bg-slate-50 p-4 rounded-xl"> <h4 class="font-semibold text-lg">PostgreSQL</h4> <p class="text-sm text-slate-600">Gerenciamento e otimização de queries.</p> </div>
-                            <div class="bg-slate-50 p-4 rounded-xl"> <h4 class="font-semibold text-lg">Oracle SQL</h4> <p class="text-sm text-slate-600">Modelagem e administração de dados.</p> </div>
+                            <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-xl"> <h4 class="font-semibold text-lg text-slate-800 dark:text-slate-200">PostgreSQL</h4> <p class="text-sm text-slate-600 dark:text-slate-400">Gerenciamento e otimização de queries.</p> </div>
+                            <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-xl"> <h4 class="font-semibold text-lg text-slate-800 dark:text-slate-200">Oracle SQL</h4> <p class="text-sm text-slate-600 dark:text-slate-400">Modelagem e administração de dados.</p> </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="projects" class="py-16">
+                    <div class="container mx-auto px-6 lg:px-16">
+                        <div class="text-center mb-16">
+                            <span class="inline-block mb-4 bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Portfólio</span>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">Projetos em Destaque</h2>
+                            <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Alguns dos dashboards interativos e soluções que desenvolvi em Power BI e outras ferramentas de análise de dados.</p>
+                        </div>
+                        <div class="grid grid-cols-1 gap-12">
+                            <div class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden flex flex-col">
+                                <iframe title="Vendas BMW (2010-2024)" src="https://app.powerbi.com/reportEmbed?reportId=c9d1705b-f5fa-4d36-9b94-0960a74b22e5&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" frameborder="0" allowFullScreen="true" class="w-full h-[600px] md:h-[500px] lg:h-[600px]"></iframe>
+                                <div class="p-6 flex-grow flex flex-col">
+                                    <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">Vendas Globais BMW (2010–2024)</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Dashboard interativo das vendas globais da BMW por região, destacando tendências de mercado.</p>
+                                    <div class="flex flex-wrap gap-2 mt-auto">
+                                        <span class="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">Power BI</span>
+                                        <span class="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">DAX</span>
+                                    </div>
+                                    <div class="mt-6 flex gap-4">
+                                        <a href="https://github.com/LucasCesarLopes" target="_blank" class="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">GitHub <i data-lucide="github" class="w-4 h-4"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden flex flex-col">
+                                <iframe title="Dashboard de Marketing" src="https://app.powerbi.com/reportEmbed?reportId=21ff516b-740a-42fb-8889-4501bb790d4a&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" frameborder="0" allowFullScreen="true" class="w-full h-[600px] md:h-[500px] lg:h-[600px]"></iframe>
+                                <div class="p-6 flex-grow flex flex-col">
+                                    <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">Dashboard de Marketing</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">KPIs de marketing digital, métricas de campanhas e análise de performance.</p>
+                                    <div class="flex flex-wrap gap-2 mt-auto">
+                                        <span class="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">Power BI</span>
+                                        <span class="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">Python</span>
+                                    </div>
+                                    <div class="mt-6 flex gap-4">
+                                        <a href="https://github.com/LucasCesarLopes" target="_blank" class="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">GitHub <i data-lucide="github" class="w-4 h-4"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden flex flex-col">
+                                <iframe title="Consulta SQL em Vendas" src="https://app.powerbi.com/reportEmbed?reportId=d42f63bf-6a61-42b1-9e66-cac2dc350e2c&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" frameborder="0" allowFullScreen="true" class="w-full h-[600px] md:h-[500px] lg:h-[600px]"></iframe>
+                                <div class="p-6 flex-grow flex flex-col">
+                                    <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">Consulta SQL em Vendas</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Consultas em SQL Server para extrair e transformar dados de vendas para visualização em Power BI.</p>
+                                    <div class="flex flex-wrap gap-2 mt-auto">
+                                        <span class="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">Power BI</span>
+                                        <span class="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">SQL</span>
+                                    </div>
+                                    <div class="mt-6 flex gap-4">
+                                        <a href="https://github.com/LucasCesarLopes" target="_blank" class="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">GitHub <i data-lucide="github" class="w-4 h-4"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                                                        <!-- Projects Section -->
-                                                        <!-- Projects Section -->
-                        <section id="projects" class="py-20 bg-gradient-to-b from-slate-50 to-white">
-                            <div class="container mx-auto px-6 lg:px-16">
-                                <div class="text-center mb-16">
-                                    <span class="inline-block mb-4 bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Portfólio</span>
-                                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">Projetos em Destaque</h2>
-                                    <p class="text-slate-600 max-w-2xl mx-auto">Alguns dos dashboards interativos e soluções que desenvolvi em Power BI e outras ferramentas de análise de dados.</p>
-                                </div>
-
-                                <!-- Projetos empilhados -->
-                                <div class="space-y-12">
-
-                                    <!-- Projeto BMW -->
-                                    <div class="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden">
-                                        <iframe title="Vendas BMW (2010-2024)" 
-                                            src="https://app.powerbi.com/reportEmbed?reportId=c9d1705b-f5fa-4d36-9b94-0960a74b22e5&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" 
-                                            frameborder="0" allowFullScreen="true"
-                                            class="w-full h-[600px] md:h-[700px]">
-                                        </iframe>
-                                        <div class="p-6">
-                                            <h3 class="text-xl font-bold text-slate-800 mb-2">Vendas Globais BMW (2010–2024)</h3>
-                                            <p class="text-slate-600 text-sm mb-4">
-                                                Dashboard interativo das vendas globais da BMW por região entre 2010 e 2024, destacando tendências de mercado.
-                                            </p>
-                                            <div class="flex flex-wrap gap-2">
-                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">Power BI</span>
-                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">DAX</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Projeto Marketing -->
-                                    <div class="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden">
-                                        <iframe title="Análise Marketing KPIs Final" 
-                                            src="https://app.powerbi.com/reportEmbed?reportId=21ff516b-740a-42fb-8889-4501bb790d4a&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" 
-                                            frameborder="0" allowFullScreen="true"
-                                            class="w-full h-[600px] md:h-[700px]">
-                                        </iframe>
-                                        <div class="p-6">
-                                            <h3 class="text-xl font-bold text-slate-800 mb-2">Dashboard de Marketing</h3>
-                                            <p class="text-slate-600 text-sm mb-4">
-                                                Dashboard dinâmico com KPIs de marketing digital, métricas de campanhas e análise de performance em tempo real.
-                                            </p>
-                                            <div class="flex flex-wrap gap-2">
-                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">Power BI</span>
-                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">Python</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Projeto Automação -->
-                                    <div class="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden">
-                                        <iframe title="Análise de Vendas - Ao Longo do Tempo / Por Categoria" 
-                                            src="https://app.powerbi.com/reportEmbed?reportId=d42f63bf-6a61-42b1-9e66-cac2dc350e2c&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" 
-                                            frameborder="0" allowFullScreen="true"
-                                            class="w-full h-[600px] md:h-[700px]">
-                                        </iframe>
-                                        <div class="p-6">
-                                            <h3 class="text-xl font-bold text-slate-800 mb-2">Consulta SQL</h3>
-                                            <p class="text-slate-600 text-sm mb-4">
-                                                Consultas realizadas através de SQL Server para trazer os dados necessários para dentro do Power e criar o visual.
-                                            </p>
-                                            <div class="flex flex-wrap gap-2">
-                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">Power BI</span>
-                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">SQL</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </section>
-
-
                 <section id="experience" data-aos>
                     <div class="text-center mb-12">
-                         <span class="inline-block mb-4 bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Trajetória</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-slate-800">Minha <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-700">Experiência</span></h1>
+                        <span class="inline-block mb-4 bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Trajetória</span>
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-200">Minha <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-700">Experiência</span></h1>
                     </div>
 
-                    <div class="relative space-y-8">
-                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200 hidden md:block"></div>
+                    <div class="relative space-y-8 before:absolute before:inset-0 before:ml-4 before:h-full before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700 before:hidden md:before:block">
                         <div class="relative">
-                            <div class="absolute left-2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg hidden md:block mt-1"></div>
-                            <div class="md:ml-12 bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl rounded-2xl p-8">
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full mb-3 inline-block">Trabalho</span>
-                                <h3 class="text-2xl font-bold text-slate-800">Analista de Dados</h3>
-                                <p class="font-medium text-slate-600 mb-2">Sapore S.A..</p>
+                            <div class="hidden md:block absolute -left-1 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-slate-900 shadow-lg"></div>
+                            <div class="md:ml-12 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl rounded-2xl p-8">
+                                <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full mb-3 inline-block">Trabalho</span>
+                                <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200">Analista de Dados</h3>
+                                <p class="font-medium text-slate-600 dark:text-slate-400 mb-2">Sapore S.A..</p>
                                 <p class="text-slate-500 text-sm mb-4">jan 2025 - Atual</p>
-                                <ul class="list-disc list-inside text-slate-600 space-y-2">
+                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
                                     <li>Análise de dados de Comercial.</li>
                                     <li>Criação de dashboards em Power BI para toda a operação na Sede.</li>
                                     <li>Automação de rotinas de extração de dados com Python e SQL.</li>
                                 </ul>
                             </div>
-                                        <div class="relative space-y-8">
-                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200 hidden md:block"></div>
+                        </div>
                         <div class="relative">
-                            <div class="absolute left-2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg hidden md:block mt-1"></div>
-                            <div class="md:ml-12 bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl rounded-2xl p-8">
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full mb-3 inline-block">Trabalho</span>
-                                <h3 class="text-2xl font-bold text-slate-800">Help Desk</h3>
-                                <p class="font-medium text-slate-600 mb-2">Sapore S.A..</p>
+                            <div class="hidden md:block absolute -left-1 top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-slate-900 shadow-lg"></div>
+                            <div class="md:ml-12 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl rounded-2xl p-8">
+                                <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full mb-3 inline-block">Trabalho</span>
+                                <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200">Help Desk</h3>
+                                <p class="font-medium text-slate-600 dark:text-slate-400 mb-2">Sapore S.A..</p>
                                 <p class="text-slate-500 text-sm mb-4">out 2023 - Jan 2025</p>
-                                <ul class="list-disc list-inside text-slate-600 space-y-2">
+                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
                                     <li>Manutenção, gestão e controle de Tablets e telefones corporativos</li>
                                     <li>Administração de AD (Active Directory)</li>
                                     <li>Documentação de procedimentos para padronizar atendimentos.</li>
-                                    <li>Comunicação clara com usuários e times técnicos, traduzindo problema de “linguagem leiga” para “linguagem técnica”.</li>
                                 </ul>
-                            </div>        
+                            </div>
                         </div>
                          <div class="relative">
-                            <div class="absolute left-2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg hidden md:block mt-1"></div>
-                            <div class="md:ml-12 bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl rounded-2xl p-8">
-                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mb-3 inline-block">Educação</span>
-                                <h3 class="text-2xl font-bold text-slate-800">Ciência de Dados</h3>
-                                <p class="font-medium text-slate-600 mb-2">Estácio</p>
+                            <div class="hidden md:block absolute -left-1 top-1 w-4 h-4 bg-green-500 rounded-full border-4 border-white dark:border-slate-900 shadow-lg"></div>
+                            <div class="md:ml-12 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-lg hover:shadow-xl rounded-2xl p-8">
+                                <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 text-sm font-medium px-3 py-1 rounded-full mb-3 inline-block">Educação</span>
+                                <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200">Ciência de Dados</h3>
+                                <p class="font-medium text-slate-600 dark:text-slate-400 mb-2">Estácio</p>
                                 <p class="text-slate-500 text-sm mb-4">jan 2025 - Atual</p>
                             </div>
                         </div>
@@ -296,32 +265,30 @@
 
                 <section id="contact" data-aos>
                     <div class="text-center mb-12">
-                         <span class="inline-block mb-4 bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Entre em Contato</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-slate-800">Vamos <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-700">Conversar</span></h1>
+                        <span class="inline-block mb-4 bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Entre em Contato</span>
+                        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-200">Vamos <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-700">Conversar</span></h1>
                     </div>
-
                     <div class="grid lg:grid-cols-2 gap-12">
-                        <div class="bg-white/70 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-8 space-y-6">
-                            <h3 class="text-2xl font-bold text-slate-800">Informações de Contato</h3>
-                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center"><i data-lucide="mail" class="w-6 h-6 text-slate-600"></i></div><div><p class="font-medium">Email</p><a href="mailto:lucascesar3445@gmail.com" class="text-slate-800 hover:text-blue-600">lucascesar3445@gmail.com</a></div></div>
-                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center"><i data-lucide="phone" class="w-6 h-6 text-slate-600"></i></div><div><p class="font-medium">Telefone</p><p class="text-slate-800">+55 (19) 99196-0067</p></div></div>
-                             <div class="flex items-center gap-4"><div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center"><i data-lucide="linkedin" class="w-6 h-6 text-slate-600"></i></div><div><p class="font-medium">LinkedIn</p><a href="https://www.linkedin.com/in/lucas-cesar-lopes" target="_blank" rel="noopener" class="text-slate-800 hover:text-blue-600">/in/lucas-cesar-lopes</a></div></div>
+                        <div class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-lg rounded-2xl p-8 space-y-6">
+                            <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200">Informações de Contato</h3>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-xl flex items-center justify-center"><i data-lucide="mail" class="w-6 h-6 text-slate-600 dark:text-slate-300"></i></div><div><p class="font-medium text-slate-800 dark:text-slate-200">Email</p><a href="mailto:lucascesar3445@gmail.com" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">lucascesar3445@gmail.com</a></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-xl flex items-center justify-center"><i data-lucide="phone" class="w-6 h-6 text-slate-600 dark:text-slate-300"></i></div><div><p class="font-medium text-slate-800 dark:text-slate-200">Telefone</p><p class="text-slate-600 dark:text-slate-400">+55 (19) 99196-0067</p></div></div>
+                             <div class="flex items-center gap-4"><div class="w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-xl flex items-center justify-center"><i data-lucide="linkedin" class="w-6 h-6 text-slate-600 dark:text-slate-300"></i></div><div><p class="font-medium text-slate-800 dark:text-slate-200">LinkedIn</p><a href="https://www.linkedin.com/in/lucas-cesar-lopes" target="_blank" rel="noopener" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400">/in/lucas-cesar-lopes</a></div></div>
                         </div>
-
-                        <div class="bg-white/70 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-8">
-                            <h3 class="text-2xl font-bold text-slate-800 mb-6">Envie uma Mensagem</h3>
+                        <div class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 shadow-lg rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6">Envie uma Mensagem</h3>
                             <form id="contact-form" class="space-y-6">
                                 <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-2">Nome *</label>
-                                    <input type="text" name="name" required class="w-full p-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Nome *</label>
+                                    <input type="text" name="name" required class="w-full p-3 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 focus:ring-2 focus:ring-blue-500 outline-none text-slate-800 dark:text-slate-200">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-2">Email *</label>
-                                    <input type="email" name="email" required class="w-full p-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email *</label>
+                                    <input type="email" name="email" required class="w-full p-3 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 focus:ring-2 focus:ring-blue-500 outline-none text-slate-800 dark:text-slate-200">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-slate-700 mb-2">Mensagem *</label>
-                                    <textarea name="message" rows="4" required class="w-full p-3 rounded-lg border border-slate-200 resize-none focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Mensagem *</label>
+                                    <textarea name="message" rows="4" required class="w-full p-3 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 resize-none focus:ring-2 focus:ring-blue-500 outline-none text-slate-800 dark:text-slate-200"></textarea>
                                 </div>
                                 <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-slate-700 text-white py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">Enviar Mensagem</button>
                                 <div id="form-status" class="mt-4 text-center text-sm"></div>
@@ -344,8 +311,6 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('aos-animate');
-
-                    // Animate skill bars once
                     if (entry.target.id === 'home') {
                         document.querySelectorAll('.skill-bar').forEach(bar => {
                             const level = bar.dataset.level;
@@ -356,56 +321,68 @@
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
         aosElements.forEach(el => observer.observe(el));
 
         // === Sidebar Active Link ===
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('#sidebar-nav a');
-
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                if (window.scrollY >= section.offsetTop - 100) {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                     current = section.id;
                 }
             });
-
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+                current = 'contact';
+            }
             navLinks.forEach(link => {
-                link.classList.toggle(
-                    'active',
-                    link.getAttribute('href') === `#${current}`
-                );
+                link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
             });
         });
 
-        // === Project Filtering ===
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn =>
-                    btn.classList.remove('active', 'bg-gradient-to-r', 'from-blue-500', 'to-slate-600', 'text-white')
-                );
-                button.classList.add('active', 'bg-gradient-to-r', 'from-blue-500', 'to-slate-600', 'text-white');
+        // === Dark Mode Toggle (SIMPLIFICADO) ===
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlEl = document.documentElement;
 
-                const filter = button.dataset.filter;
-                projectCards.forEach(card => {
-                    card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
-                });
-            });
+        // Função para atualizar o ícone
+        const updateThemeIcon = () => {
+            themeIcon.setAttribute('data-lucide', htmlEl.classList.contains('dark') ? 'moon' : 'sun');
+            lucide.createIcons();
+        };
+
+        // Inicializa o ícone correto
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            localStorage.theme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+            updateThemeIcon();
         });
 
-        // === Efeito hover nos cards de projeto ===
-        document.querySelectorAll('.project-card .group').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.classList.add('ring', 'ring-blue-400', 'scale-105');
-            });
-            card.addEventListener('mouseleave', () => {
-                card.classList.remove('ring', 'ring-blue-400', 'scale-105');
-            });
-        });
+        // === Mobile Menu (NOVO) ===
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobile-menu-overlay');
+        const sidebarLinks = document.querySelectorAll('#sidebar-nav a');
+
+        const openMenu = () => {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+        };
+        
+        const closeMenu = () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        };
+
+        mobileMenuButton.addEventListener('click', openMenu);
+        overlay.addEventListener('click', closeMenu);
+        sidebarLinks.forEach(link => link.addEventListener('click', closeMenu));
 
         // === EmailJS Form ===
         emailjs.init('xtgH_eblI8R4WSx-U'); // Substitua por seu User ID do EmailJS
@@ -417,11 +394,11 @@
             emailjs.sendForm('service_bvstt6q', 'template_impdqss', this)
                 .then(function() {
                     statusDiv.textContent = 'Mensagem enviada com sucesso!';
-                    statusDiv.className = 'mt-4 text-center text-green-600 text-sm';
+                    statusDiv.className = 'mt-4 text-center text-green-600 dark:text-green-400 text-sm';
                     form.reset();
                 }, function(error) {
                     statusDiv.textContent = 'Erro ao enviar. Tente novamente.';
-                    statusDiv.className = 'mt-4 text-center text-red-600 text-sm';
+                    statusDiv.className = 'mt-4 text-center text-red-600 dark:text-red-400 text-sm';
                 });
         });
     });
