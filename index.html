@@ -127,7 +127,7 @@
                             <div class="bg-white/70 backdrop-blur-sm border-0 shadow-xl rounded-2xl p-8">
                                 <h3 class="text-xl font-bold text-slate-800 mb-6">Principais Competências</h3>
                                 <div class="space-y-4">
-                                    <div class="skill-bar" data-level="100">
+                                    <div class="skill-bar" data-level="70">
                                         <div class="flex justify-between mb-1"><span class="font-medium text-slate-700">SQL</span><span class="text-slate-600">100%</span></div>
                                         <div class="h-2 bg-slate-200 rounded-full"><div class="h-full bg-gradient-to-r from-blue-500 to-slate-600 rounded-full skill-bar-inner"></div></div>
                                     </div>
@@ -169,57 +169,80 @@
                     </div>
                 </section>
 
-                <section id="projects" data-aos>
-                     <div class="text-center mb-12">
-                         <span class="inline-block mb-4 bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Portfólio</span>
-                        <h1 class="text-4xl md:text-5xl font-bold text-slate-800">Meus <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-700">Projetos</span></h1>
-                    </div>
-                    
-                    <div class="mb-8 flex justify-center flex-wrap gap-2" id="project-filters">
-                        <button data-filter="all" class="filter-btn active bg-gradient-to-r from-blue-500 to-slate-600 text-white px-4 py-2 rounded-md">Todos</button>
-                        <button data-filter="data_analysis" class="filter-btn bg-white px-4 py-2 rounded-md">Análise de Dados</button>
-                        <button data-filter="visualization" class="filter-btn bg-white px-4 py-2 rounded-md">Python</button>
-                        <button data-filter="automation" class="filter-btn bg-white px-4 py-2 rounded-md">Automação</button>
-                    </div>
+                                                        <!-- Projects Section -->
+                                                        <!-- Projects Section -->
+                        <section id="projects" class="py-20 bg-gradient-to-b from-slate-50 to-white">
+                            <div class="container mx-auto px-6 lg:px-16">
+                                <div class="text-center mb-16">
+                                    <span class="inline-block mb-4 bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Portfólio</span>
+                                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">Projetos em Destaque</h2>
+                                    <p class="text-slate-600 max-w-2xl mx-auto">Alguns dos dashboards interativos e soluções que desenvolvi em Power BI e outras ferramentas de análise de dados.</p>
+                                </div>
 
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
-                        <div class="project-card" data-category="data_analysis">
-                             <div class="group bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full rounded-2xl flex flex-col">
-                                <div class="w-full h-48 bg-gradient-to-br from-blue-100 to-slate-100 rounded-t-2xl flex items-center justify-center"><i data-lucide="bar-chart-3" class="w-16 h-16 text-slate-400"></i></div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full mb-3 self-start">Análise de Dados & Data Storytelling</span>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">Vendas Globais BMW por Região (2010–2024)</h3>
-                                        <p class="text-slate-600 mb-4 text-sm flex-1">Análise das vendas globais da BMW por região entre 2010 e 2024.</p>
-                                        <a href="https://app.powerbi.com/links/eF3Y4Rz8qp?ctid=da49a844-e2e3-40af-86a6-c3819d704f49&pbi_source=linkShare" target="_blank" rel="noopener" class="inline-block mt-2 text-blue-700 hover:underline font-medium">🔗 Ver Projeto Power BI</a>
-                                    <div class="flex flex-wrap gap-2"><span class="text-xs bg-slate-200 px-2 py-1 rounded">Power BI</span><span class="text-xs bg-slate-200 px-2 py-1 rounded">DAX</span><span class="text-xs bg-slate-200 px-2 py-1 rounded">Linguagem M</span></div>
+                                <!-- Projetos empilhados -->
+                                <div class="space-y-12">
+
+                                    <!-- Projeto BMW -->
+                                    <div class="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden">
+                                        <iframe title="Vendas BMW (2010-2024)" 
+                                            src="https://app.powerbi.com/reportEmbed?reportId=c9d1705b-f5fa-4d36-9b94-0960a74b22e5&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" 
+                                            frameborder="0" allowFullScreen="true"
+                                            class="w-full h-[600px] md:h-[700px]">
+                                        </iframe>
+                                        <div class="p-6">
+                                            <h3 class="text-xl font-bold text-slate-800 mb-2">Vendas Globais BMW (2010–2024)</h3>
+                                            <p class="text-slate-600 text-sm mb-4">
+                                                Dashboard interativo das vendas globais da BMW por região entre 2010 e 2024, destacando tendências de mercado.
+                                            </p>
+                                            <div class="flex flex-wrap gap-2">
+                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">Power BI</span>
+                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">DAX</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Projeto Marketing -->
+                                    <div class="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden">
+                                        <iframe title="Análise Marketing KPIs Final" 
+                                            src="https://app.powerbi.com/reportEmbed?reportId=21ff516b-740a-42fb-8889-4501bb790d4a&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" 
+                                            frameborder="0" allowFullScreen="true"
+                                            class="w-full h-[600px] md:h-[700px]">
+                                        </iframe>
+                                        <div class="p-6">
+                                            <h3 class="text-xl font-bold text-slate-800 mb-2">Dashboard de Marketing</h3>
+                                            <p class="text-slate-600 text-sm mb-4">
+                                                Dashboard dinâmico com KPIs de marketing digital, métricas de campanhas e análise de performance em tempo real.
+                                            </p>
+                                            <div class="flex flex-wrap gap-2">
+                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">Power BI</span>
+                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">Python</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Projeto Automação -->
+                                    <div class="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden">
+                                        <iframe title="Análise de Vendas - Ao Longo do Tempo / Por Categoria" 
+                                            src="https://app.powerbi.com/reportEmbed?reportId=d42f63bf-6a61-42b1-9e66-cac2dc350e2c&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49" 
+                                            frameborder="0" allowFullScreen="true"
+                                            class="w-full h-[600px] md:h-[700px]">
+                                        </iframe>
+                                        <div class="p-6">
+                                            <h3 class="text-xl font-bold text-slate-800 mb-2">Consulta SQL</h3>
+                                            <p class="text-slate-600 text-sm mb-4">
+                                                Consultas realizadas através de SQL Server para trazer os dados necessários para dentro do Power e criar o visual.
+                                            </p>
+                                            <div class="flex flex-wrap gap-2">
+                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">Power BI</span>
+                                                <span class="text-xs bg-slate-200 px-2 py-1 rounded">SQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="project-card" data-category="visualization">
-                             <div class="group bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full rounded-2xl flex flex-col">
-                                <div class="w-full h-48 bg-gradient-to-br from-purple-100 to-slate-100 rounded-t-2xl flex items-center justify-center"><i data-lucide="eye" class="w-16 h-16 text-slate-400"></i></div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full mb-3 self-start">Python e Machine Learning</span>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">Dashboard de KPI de Marketing</h3>
-                                    <p class="text-slate-600 mb-4 text-sm flex-1">Criação de um dashboard interativo no Power BI para monitoramento de métricas de marketing digital em tempo real.</p>
-                                    <a href="https://app.powerbi.com/links/hslZU06YEt?ctid=da49a844-e2e3-40af-86a6-c3819d704f49&pbi_source=linkShare" target="_blank" rel="noopener" class="inline-block mt-2 text-blue-700 hover:underline font-medium">🔗 Ver Projeto Power BI</a>
-                                    <div class="flex flex-wrap gap-2"><span class="text-xs bg-slate-200 px-2 py-1 rounded">Power BI</span><span class="text-xs bg-slate-200 px-2 py-1 rounded">Python</span><span class="text-xs bg-slate-200 px-2 py-1 rounded">Machine Learning</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card" data-category="automation">
-                             <div class="group bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full rounded-2xl flex flex-col">
-                                <div class="w-full h-48 bg-gradient-to-br from-red-100 to-slate-100 rounded-t-2xl flex items-center justify-center"><i data-lucide="zap" class="w-16 h-16 text-slate-400"></i></div>
-                                <div class="p-6 flex-1 flex flex-col">
-                                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full mb-3 self-start">Automação de API e SQL</span>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">Automação de API e Querys de SQK</h3>
-                                    <p class="text-slate-600 mb-4 text-sm flex-1">Desenvolvimento de scripts em Python para automatizar a coleta e o processamento de dados via API, além da criação de consultas SQL otimizadas para reduzir o tempo de atualização</p>
-                                    <div class="flex flex-wrap gap-2"><span class="text-xs bg-slate-200 px-2 py-1 rounded">Python</span><span class="text-xs bg-slate-200 px-2 py-1 rounded">SQL</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                        </section>
+
 
                 <section id="experience" data-aos>
                     <div class="text-center mb-12">
@@ -237,7 +260,7 @@
                                 <p class="font-medium text-slate-600 mb-2">Sapore S.A..</p>
                                 <p class="text-slate-500 text-sm mb-4">jan 2025 - Atual</p>
                                 <ul class="list-disc list-inside text-slate-600 space-y-2">
-                                    <li>Análise de dados de Comercial predição de faturamento.</li>
+                                    <li>Análise de dados de Comercial.</li>
                                     <li>Criação de dashboards em Power BI para toda a operação na Sede.</li>
                                     <li>Automação de rotinas de extração de dados com Python e SQL.</li>
                                 </ul>
